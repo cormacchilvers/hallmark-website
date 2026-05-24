@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-24T00:00:00Z",
+  "title": "Design System: Hallmark Studio",
+  "extensions": {
+    "colorMeta": {
+      "editorial-indigo": {
+        "role": "primary",
+        "displayName": "Editorial Indigo",
+        "canonical": "oklch(52% 0.25 264)",
+        "tonalRamp": ["#0C0A33", "#1A1275", "#2C1CB8", "#3D2ED8", "#4F46E5", "#7B74F0", "#A8A3F6", "#CAC7FA", "#E8E7FC"]
+      },
+      "editorial-indigo-deep": {
+        "role": "primary-hover",
+        "displayName": "Editorial Indigo Deep",
+        "canonical": "oklch(44% 0.26 264)",
+        "tonalRamp": ["#080620", "#130E60", "#1F169A", "#2820BB", "#3525CD", "#6258E0", "#9490EE", "#BCB9F6", "#DDD9FB"]
+      },
+      "parchment": {
+        "role": "neutral-bg",
+        "displayName": "Parchment",
+        "canonical": "oklch(97.5% 0.003 90)",
+        "tonalRamp": ["#0D0D0C", "#222221", "#3D3D3B", "#5C5B59", "#7D7C79", "#A09F9C", "#C5C4C1", "#E2E2DF", "#FAFAF9"]
+      },
+      "ink": {
+        "role": "neutral-text",
+        "displayName": "Ink",
+        "canonical": "oklch(17% 0.02 255)",
+        "tonalRamp": ["#060810", "#151C27", "#263041", "#3A4659", "#505C73", "#6E798F", "#96A0B0", "#C0C6D0", "#E8EBF0"]
+      },
+      "ink-muted": {
+        "role": "neutral-text-secondary",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(38% 0.018 260)",
+        "tonalRamp": ["#12131C", "#222435", "#353750", "#464555", "#5A5969", "#747385", "#9695A4", "#BBBAC7", "#DDDCE6"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only. Two lines: line one Ink, line two Editorial Indigo italic." },
+      "headline": { "displayName": "Headline", "purpose": "Page-level section headlines. One italic key word per page maximum." },
+      "title": { "displayName": "Title", "purpose": "Project names, CTA statements. Playfair Display without italic." },
+      "body-lg": { "displayName": "Body Large", "purpose": "Subheadlines, service descriptions, about body. Max 65ch." },
+      "body": { "displayName": "Body", "purpose": "Standard copy. Max 72ch." },
+      "label": { "displayName": "Label", "purpose": "All-caps functional text: nav links, button text, section labels, form field labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "fade-up", "value": "opacity 0→1, translateY 28px→0, duration 0.85s, ease power2.out", "purpose": "Scroll-triggered entrance for all content sections. GSAP ScrollTrigger." },
+      { "name": "hero-entrance", "value": "opacity 0→1, translateY 22px→0, duration 1s, ease power3.out, stagger 0.18s", "purpose": "Hero content entrance on page load." },
+      { "name": "image-hover", "value": "transform: scale(1.025), duration 0.7s, ease power2.out", "purpose": "Image scale on project/service card hover." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1024px" },
+      { "name": "mobile", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Used for View Project, Book a Consultation, Send Message, Get In Touch.",
+      "html": "<button class=\"ds-btn-primary\">Get In Touch</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; background: #4F46E5; color: #fff; border: 1.5px solid #4F46E5; cursor: pointer; transition: background 0.3s ease, border-color 0.3s ease; white-space: nowrap; } .ds-btn-primary:hover { background: #3525CD; border-color: #3525CD; } .ds-btn-primary:focus-visible { outline: 2px solid #4F46E5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary CTA. Used alongside primary for lower-priority actions.",
+      "html": "<button class=\"ds-btn-outline\">Our Process</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px 32px; border-radius: 4px; background: transparent; color: #151C27; border: 1.5px solid #C7C4D8; cursor: pointer; transition: border-color 0.3s ease; white-space: nowrap; } .ds-btn-outline:hover { border-color: #151C27; } .ds-btn-outline:focus-visible { outline: 2px solid #4F46E5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Hero Pill",
+      "kind": "chip",
+      "description": "Identity label above the hero headline. One use only per page.",
+      "html": "<span class=\"ds-pill\">Digital Agency &amp; Design Studio</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border: 1px solid #C7C4D8; border-radius: 9999px; font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: #464555; } .ds-pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #4F46E5; flex-shrink: 0; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "description": "All-caps eyebrow label above page headlines. Signals the section name.",
+      "html": "<p class=\"ds-section-label\">Selected Works</p>",
+      "css": ".ds-section-label { font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #777587; margin-bottom: 20px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Fixed glass header. Identical across all 5 pages.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav__inner\"><a href=\"#\" class=\"ds-nav__logo\">Hallmark Studio</a><ul class=\"ds-nav__links\"><li><a href=\"#\">Work</a></li><li><a href=\"#\">Services</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Contact</a></li></ul><button class=\"ds-btn-primary\">Get In Touch</button></div></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: rgba(250,250,249,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; } .ds-nav.scrolled { border-bottom-color: #E2E8F8; } .ds-nav__inner { max-width: 1280px; margin: 0 auto; padding: 0 40px; height: 100%; display: flex; align-items: center; justify-content: space-between; } .ds-nav__logo { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 600; color: #151C27; letter-spacing: -0.01em; } .ds-nav__links { display: flex; gap: 36px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); } .ds-nav__links a { font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #464555; text-decoration: none; transition: color 0.3s ease; } .ds-nav__links a:hover { color: #151C27; }"
+    },
+    {
+      "name": "Form Field",
+      "kind": "input",
+      "description": "Contact form input. Bottom-border only — no enclosing box.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"demo\">Email Address</label><input class=\"ds-field__input\" id=\"demo\" type=\"email\" placeholder=\"you@company.com\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 10px; } .ds-field__label { font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #464555; } .ds-field__input { font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: 400; color: #151C27; background: transparent; border: none; border-bottom: 1px solid #C7C4D8; padding: 12px 0; outline: none; transition: border-color 0.3s ease; width: 100%; } .ds-field__input::placeholder { color: #777587; } .ds-field__input:focus { border-bottom-color: #151C27; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Quiet Challenger",
+    "overview": "Hallmark Studio is a new studio with complete conviction. The design system reflects that: restrained on the surface, sharp underneath. There are no gratuitous animations, no borrowed aesthetic frameworks, no signals borrowed from established agencies. This is a system that communicates authority through what it removes, not what it adds. Every surface that does not earn its presence is cut. The result is a visual language that feels inevitable rather than designed.\n\nThe system is built on a strict typographic hierarchy. Playfair Display carries the brand identity at every headline scale. Inter handles everything functional. The contrast between the two typefaces IS the personality of the studio. Color is restrained by doctrine. The palette is Parchment and Ink with one accent: Editorial Indigo. That accent is rationed, never decorative. Its rarity is its power.",
+    "keyCharacteristics": [
+      "Typographic-first: the serif headline IS the identity, not decoration",
+      "Restrained color: near-monochromatic with one rationed indigo accent",
+      "Space as a design decision: generous vertical rhythm, no decorative fills",
+      "Flat elevation: no shadows, depth through tonal surface shifts only",
+      "Motion serves communication: scroll fades only, no choreography for its own sake"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Editorial Indigo appears on 15% or less of any given screen. Its rarity is the point.", "section": "colors" },
+      { "name": "The No-Pure-White Rule", "body": "Page backgrounds use Parchment (#FAFAF9), never #FFFFFF. Pure white is reserved for reversed text on indigo buttons only.", "section": "colors" },
+      { "name": "The Italic Moment Rule", "body": "Italic Playfair Display is used once per page, in the primary headline, for the phrase that carries the most semantic weight.", "section": "typography" },
+      { "name": "The Caps Boundary Rule", "body": "Uppercase text is strictly limited to the Label role. Headlines and body copy are sentence case.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Box shadows are prohibited site-wide. Depth is tonal.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Playfair Display italic for exactly one key phrase per page headline",
+      "Do keep Editorial Indigo to primary CTAs, italic headline spans, section indexes, and service tags only",
+      "Do use 1px Border Light (#E2E8F8) as the only structural separator",
+      "Do let white space carry weight — section gap is 120px",
+      "Do scale images on hover via transform: scale(1.025) only",
+      "Do respect prefers-reduced-motion for all GSAP animations"
+    ],
+    "donts": [
+      "Don't use cursor blobs, excessive parallax, 3D WebGL, or any animation that performs effort rather than communicating",
+      "Don't use generic SaaS template structures: hero plus three-feature grid plus pricing table",
+      "Don't use dark neon or developer-tool aesthetics",
+      "Don't use stock photography: smiling team photos, iStock imagery, generic laptop filler",
+      "Don't use gradient text (background-clip: text)",
+      "Don't use side-stripe borders (border-left as a colored accent greater than 1px)",
+      "Don't use box shadows anywhere",
+      "Don't use Editorial Indigo as a background fill or gradient",
+      "Don't use uppercase outside the Label typographic role"
+    ]
+  }
+}
