@@ -578,7 +578,7 @@ ul { list-style: none; }
 
 .value-props {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 60px;
   padding: var(--section-gap) 0;
   border-top: 1px solid var(--border-light);
