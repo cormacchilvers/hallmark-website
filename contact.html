@@ -79,7 +79,9 @@
         </div>
 
         <!-- FORM -->
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="1e3f0347-854c-4a7a-8742-d2949fc5ebb3">
+          <input type="hidden" name="subject" value="New Contact Form Submission — Hallmark Studio">
 
           <div class="form-field">
             <label for="name">Name</label>
@@ -88,7 +90,7 @@
 
           <div class="form-field">
             <label for="business">Business Name</label>
-            <input type="text" id="business" name="business" placeholder="Your company or brand" autocomplete="organization" />
+            <input type="text" id="business" name="company" placeholder="Your company or brand" autocomplete="organization" />
           </div>
 
           <div class="form-field">
