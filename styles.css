@@ -391,7 +391,7 @@ ul { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-wT0oU24OJYU?w=1600&q=85');
+  background-image: url('hero-bg.jpg');
   background-size: cover;
   background-position: center center;
   z-index: 0;
