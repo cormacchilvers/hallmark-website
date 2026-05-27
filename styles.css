@@ -391,7 +391,7 @@ ul { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=85');
+  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85');
   background-size: cover;
   background-position: center center;
   z-index: 0;
@@ -609,11 +609,7 @@ ul { list-style: none; }
    PAGE: ABOUT
    ============================================================ */
 .about-hero {
-  min-height: calc(100vh - 120px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px 0;
+  padding: var(--section-gap) 0 80px;
 }
 .about-hero__inner { max-width: 860px; }
 .about-hero__eyebrow {
@@ -813,12 +809,124 @@ ul { list-style: none; }
   .value-props { grid-template-columns: 1fr; gap: 44px; }
 
   /* About */
-  .about-hero { padding: 32px 0; }
+  .about-hero { padding: 60px 0 48px; }
   .about-hero__body { font-size: 1.0625rem; }
+  .about-team__inner { grid-template-columns: 1fr; gap: 40px; }
 
   /* Footer */
   .footer__inner { flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer__links { flex-wrap: wrap; gap: 16px; }
+}
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.service-card__price {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.service-card__price span {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.service-card__price-note {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-subtle);
+  margin-bottom: 32px;
+}
+.buyout-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+.buyout-table td {
+  font-size: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-muted);
+}
+.buyout-table tr:last-child td { border-bottom: none; }
+.buyout-table td:first-child { color: var(--text); font-weight: 500; }
+.buyout-table td:last-child { text-align: right; font-weight: 600; color: var(--text); }
+.buyout-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   CONCEPT BADGE
+   ============================================================ */
+.project-card__image { position: relative; }
+.concept-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 5px 11px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   ABOUT — TEAM SECTION
+   ============================================================ */
+.about-team {
+  padding: var(--section-gap) 0;
+  border-top: 1px solid var(--border-light);
+}
+.about-team__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-team__photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-subtle);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px dashed var(--border);
+}
+.about-team__label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 28px;
+}
+.about-team__bio-text {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-muted);
 }
 
 /* ============================================================
