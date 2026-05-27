@@ -536,7 +536,7 @@ ul { list-style: none; }
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-bottom: var(--section-gap);
+  margin-bottom: 60px;
 }
 .service-card { background: var(--bg); overflow: hidden; }
 .service-card__image {
@@ -580,7 +580,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 60px;
-  padding: var(--section-gap) 0;
+  padding: 60px 0;
   border-top: 1px solid var(--border-light);
 }
 .value-prop__index {
