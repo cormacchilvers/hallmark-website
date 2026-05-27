@@ -36,21 +36,49 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Contact form submission ── */
   const form = document.querySelector('form.contact-form');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const btn = form.querySelector('.btn--primary');
+      const note = form.querySelector('.form-note');
       const original = btn.textContent;
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#16a34a';
-      btn.style.borderColor = '#16a34a';
+
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        btn.disabled = false;
-        form.reset();
-      }, 3500);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form),
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#16a34a';
+          btn.style.borderColor = '#16a34a';
+          if (note) note.textContent = 'Thanks — we\'ll be in touch within 24 hours.';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.disabled = false;
+            if (note) note.textContent = 'We usually respond within 24 business hours.';
+          }, 4000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — try again';
+        btn.style.background = '#dc2626';
+        btn.style.borderColor = '#dc2626';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 3500);
+      }
     });
   }
 
