@@ -528,31 +528,6 @@ ul { list-style: none; }
   font-kerning: normal;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: var(--border-light);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: var(--section-gap);
-}
-.service-card { background: var(--bg); overflow: hidden; }
-.service-card__image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--bg-surface);
-}
-.service-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-.service-card:hover .service-card__image img { transform: scale(1.03); }
-.service-card__body { padding: 52px 48px 56px; }
 .service-card__tag {
   display: inline-block;
   font-size: 11px;
@@ -562,18 +537,184 @@ ul { list-style: none; }
   color: var(--primary);
   margin-bottom: 14px;
 }
-.service-card__title {
+
+/* One-off build */
+.build-section { padding-bottom: var(--section-gap); }
+.build-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 56px;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 56px 56px;
+  background: var(--bg);
+}
+.build-card__title {
   font-family: var(--font-heading);
   font-size: 38px;
   font-weight: 600;
   line-height: 1.15;
   margin-bottom: 16px;
 }
-.service-card__desc {
+.build-card__desc {
   font-size: 16px;
   color: var(--text-muted);
   line-height: 1.75;
   margin-bottom: 36px;
+  max-width: 460px;
+}
+.build-card__price {
+  border-left: 1px solid var(--border-light);
+  padding-left: 56px;
+}
+.build-card__amount {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.build-card__period {
+  font-size: 13px;
+  color: var(--text-subtle);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+.build-card__terms { display: flex; flex-direction: column; gap: 8px; }
+.build-card__terms li {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding-left: 22px;
+  position: relative;
+}
+.build-card__terms li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+/* Monthly plans */
+.pricing-section { padding-bottom: var(--section-gap); }
+.pricing-header { max-width: 640px; margin-bottom: 56px; }
+.pricing-header__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.pricing-header__sub {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.price-card {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 44px;
+}
+.price-card--featured {
+  border-color: var(--primary);
+  box-shadow: 0 24px 60px -28px rgba(79, 70, 229, 0.35);
+}
+.price-card__badge {
+  position: absolute;
+  top: -13px;
+  left: 36px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+}
+.price-card__tier {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 18px;
+}
+.price-card__price {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.price-card__price span {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-subtle);
+  letter-spacing: 0;
+}
+.price-card__bestfor {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+.price-card__cta { width: 100%; margin-bottom: 32px; }
+.price-card__features { display: flex; flex-direction: column; gap: 14px; }
+.price-card__features li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 28px;
+  position: relative;
+}
+.price-card__features li.is-in { color: var(--text); }
+.price-card__features li.is-out { color: var(--text-subtle); }
+.price-card__features li::before {
+  position: absolute;
+  left: 0; top: 0;
+  font-weight: 600;
+}
+.price-card__features li.is-in::before { content: '✓'; color: var(--primary); }
+.price-card__features li.is-out::before { content: '—'; color: var(--border); }
+
+/* Terms */
+.terms-section { padding-bottom: var(--section-gap); }
+.terms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  padding-top: var(--section-gap);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Honesty line */
+.honesty-section { padding-bottom: var(--section-gap); }
+.honesty {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
 
 .value-props {
@@ -806,10 +947,14 @@ ul { list-style: none; }
   .project-card__name { font-size: 1.75rem; }
   .work-cta__headline { font-size: 1.875rem; }
 
-  /* Services */
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card__body { padding: 36px 28px 40px; }
-  .service-card__title { font-size: 1.875rem; }
+  /* Services / Pricing */
+  .build-card { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; }
+  .build-card__title { font-size: 1.875rem; }
+  .build-card__price { border-left: none; border-top: 1px solid var(--border-light); padding-left: 0; padding-top: 32px; }
+  .build-card__amount { font-size: 52px; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 32px; }
+  .price-card--featured { order: -1; }
+  .terms { grid-template-columns: 1fr; gap: 44px; }
   .value-props { grid-template-columns: 1fr; gap: 44px; }
 
   /* About */
