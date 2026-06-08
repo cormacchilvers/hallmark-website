@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Guarantee from '../components/Guarantee.astro';
 import AuditCTA from '../components/AuditCTA.astro';
 
 const faqSchema = JSON.stringify({
@@ -10,105 +9,35 @@ const faqSchema = JSON.stringify({
     {
       '@type': 'Question',
       name: 'Is there a contract?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans have a 6-month minimum term. After that, it\'s rolling monthly with 30 days\' notice to cancel. The one-off website build has no ongoing contract.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans have a 6-month minimum term. After that, rolling monthly with 30 days\' written notice to cancel. The standalone website build has no ongoing commitment.' }
     },
     {
       '@type': 'Question',
       name: 'How do I pay?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans are paid monthly by direct debit or bank transfer. The one-off website build is 50% upfront, 50% on completion. We\'ll send you an invoice.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans are invoiced monthly in advance. Plans that include a website have a one-off £299 setup fee before we start. The standalone Website Only build is 50% upfront and 50% on completion.' }
     },
     {
       '@type': 'Question',
       name: 'What is the 60-day guarantee?',
-      acceptedAnswer: { '@type': 'Answer', text: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything. No questions asked. No cancellation fees. We\'re confident in what we do, this is how we show it.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'If you\'re not happy in the first 60 days, we\'ll fix it. If we can\'t fix it to your satisfaction, we refund your monthly plan fees in full.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens if I cancel before 6 months?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Cancel before the 6-month minimum and the remaining website build balance (£400) becomes payable, then the site is fully yours. After 6 months you owe nothing and keep your website and Google Business Profile.' }
     },
     {
       '@type': 'Question',
       name: 'Can I upgrade my plan later?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. You can move up to a higher plan at any time. We\'ll just invoice the difference from your next billing date.' }
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Move up to a higher plan at any time. We\'ll invoice the difference from your next billing date. Downgrading is available after your 6-month minimum.' }
     },
   ],
 });
-
-const tiers = [
-  {
-    name: 'Starter',
-    price: '£199',
-    cycle: '/month',
-    desc: 'Google presence sorted.',
-    features: [
-      'Google Business Profile claimed & completed',
-      'Monthly profile posts & photo updates',
-      'Review response management',
-      'NAP consistency check (name, address, phone)',
-      'Monthly progress report',
-    ],
-    notIncluded: 'No website included. No ongoing SEO content.',
-    cta: '/free-audit',
-    ctaLabel: 'Start with Starter',
-  },
-  {
-    name: 'Growth',
-    price: '£399',
-    cycle: '/month',
-    desc: 'Website + monthly SEO.',
-    features: [
-      'Everything in Starter',
-      'Custom website build included (up to 8 pages)',
-      'Mobile-first, fast-loading design',
-      'Copy written for you',
-      'Monthly local SEO content (2 pages/posts)',
-      'Technical SEO monitoring & fixes',
-      'Priority email support',
-    ],
-    notIncluded: 'Full link-building campaign not included.',
-    cta: '/free-audit',
-    ctaLabel: 'Start with Growth',
-    featured: true,
-    badge: 'Most popular',
-  },
-  {
-    name: 'Pro',
-    price: '£799',
-    cycle: '/month',
-    desc: 'Serious about local dominance.',
-    features: [
-      'Everything in Growth',
-      'Full local SEO campaign',
-      'Competitor research & gap analysis',
-      'Monthly link-building outreach',
-      'Schema markup & structured data',
-      'Quarterly strategy call',
-      'Same-day response SLA',
-    ],
-    notIncluded: 'Paid ads (Google/Facebook) not included.',
-    cta: '/free-audit',
-    ctaLabel: 'Start with Pro',
-  },
-  {
-    name: 'Website Only',
-    price: 'From £999',
-    cycle: 'one-off',
-    desc: 'Just the website. Up to 8 pages.',
-    features: [
-      'Custom design (up to 8 pages)',
-      'Mobile-first, fast-loading',
-      'Copy written for you',
-      'SEO foundations (titles, meta, schema)',
-      'Google Analytics & Search Console',
-      'Contact form',
-      'All logins handed over, you own it',
-    ],
-    notIncluded: 'No ongoing SEO management.',
-    cta: '/free-audit',
-    ctaLabel: 'Get a quote',
-  },
-];
 ---
 
 <Layout
   title="Pricing | Web Design & SEO Essex | Hallmark Studio"
-  description="Transparent pricing for web design and SEO in Essex. Starter from £199/month, website build from £999. 60-day walk-away guarantee."
+  description="Transparent pricing for web design and SEO in Essex. Plans from £249/month, website build from £999. 60-day guarantee."
   schemaExtra={faqSchema}
 >
 
@@ -120,49 +49,162 @@ const tiers = [
       <p class="page-header__sub">
         We publish real prices because we're confident in what we do. No "call us for a quote" until you've already invested an hour talking to us.
       </p>
+      <p class="pricing-hero-note">All monthly plans: 6-month minimum, then rolling monthly with 30 days' notice to cancel.</p>
     </div>
   </div>
 
-  <!-- PRICING TABLE -->
+  <!-- ANCHOR STRIP -->
+  <div class="anchor-strip">
+    <div class="container">
+      <p>A custom website on its own costs <strong>£999</strong>. On any monthly plan it's just a <strong>£299 one-off setup</strong> — the rest is covered by your 6-month commitment.</p>
+    </div>
+  </div>
+
+  <!-- 3 PLAN TIERS -->
   <section class="section">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="label">Monthly plans + one-off build</span>
-        <h2>Pick what fits where you are right now.</h2>
-        <p class="section-header__sub" style="margin-inline:auto;">
-          All monthly plans: 6-month minimum, then rolling monthly with 30 days' notice to cancel.
-        </p>
-      </div>
+      <div class="pricing-plans">
 
-      <div class="pricing-grid">
-        {tiers.map(({ name, price, cycle, desc, features, notIncluded, cta, ctaLabel, featured, badge }) => (
-          <div class={`pricing-card${featured ? ' pricing-card--featured' : ''}`}>
-            {badge && <span class="pricing-card__badge">{badge}</span>}
-            <h3>{name}</h3>
-            <p class="pricing-card__desc">{desc}</p>
-            <div class="pricing-card__price">{price}</div>
-            <p class="pricing-card__cycle">{cycle}</p>
+        <!-- STARTER -->
+        <div class="pricing-card">
+          <h3>Starter</h3>
+          <p class="pricing-card__desc">Google presence, sorted.</p>
+          <div class="pricing-card__price">£249</div>
+          <p class="pricing-card__cycle">/month</p>
 
-            <hr class="pricing-card__divider" />
+          <hr class="pricing-card__divider" />
 
-            <ul class="pricing-card__features" role="list">
-              {features.map(f => <li>{f}</li>)}
-            </ul>
+          <ul class="pricing-card__features" role="list">
+            <li>Google Business Profile claimed &amp; completed</li>
+            <li>Monthly profile posts &amp; photo updates</li>
+            <li>Review response management</li>
+            <li>NAP consistency check (name, address, phone)</li>
+            <li>Monthly progress report</li>
+          </ul>
 
-            <p class="not-included">
-              <strong>Not included:</strong> {notIncluded}
-            </p>
+          <p class="not-included"><strong>Not included:</strong> no website, no ongoing SEO content.</p>
 
-            <a href={cta} class={`btn btn--full ${featured ? 'btn--amber' : 'btn--navy'}`}>
-              {ctaLabel}
-            </a>
+          <a href="/free-audit" class="btn btn--navy btn--full">Start with Starter</a>
+        </div>
+
+        <!-- GROWTH (featured — appears first on mobile via CSS order) -->
+        <div class="pricing-card pricing-card--featured">
+          <span class="pricing-card__badge">Most Popular</span>
+          <h3>Growth</h3>
+          <p class="pricing-card__desc">Website + monthly SEO.</p>
+          <div class="pricing-card__price">£399</div>
+          <p class="pricing-card__cycle">/month</p>
+          <p class="plan-setup-fee">+ £299 one-off setup</p>
+          <div class="plan-anchor-note">
+            Website worth <strong>£999</strong> — yours for just <strong>£299</strong> up front on this plan.
           </div>
-        ))}
+
+          <hr class="pricing-card__divider" />
+
+          <ul class="pricing-card__features" role="list">
+            <li>Everything in Starter</li>
+            <li>Custom website build included (up to 6 pages)</li>
+            <li>Mobile-first, fast-loading design</li>
+            <li>Copy written for you</li>
+            <li>Monthly local SEO content (2 pages/posts)</li>
+            <li>Technical SEO monitoring &amp; fixes</li>
+            <li>Priority email support</li>
+          </ul>
+
+          <p class="not-included"><strong>Not included:</strong> full link-building campaign.</p>
+
+          <a href="/free-audit" class="btn btn--amber btn--full">Start with Growth</a>
+        </div>
+
+        <!-- PRO -->
+        <div class="pricing-card">
+          <h3>Pro</h3>
+          <p class="pricing-card__desc">Serious about local dominance.</p>
+          <div class="pricing-card__price">£799</div>
+          <p class="pricing-card__cycle">/month</p>
+          <p class="plan-setup-fee plan-setup-fee--muted">+ £299 one-off setup</p>
+
+          <hr class="pricing-card__divider" />
+
+          <ul class="pricing-card__features" role="list">
+            <li>Everything in Growth</li>
+            <li>Full local SEO campaign</li>
+            <li>Competitor research &amp; gap analysis</li>
+            <li>Monthly link-building outreach</li>
+            <li>Schema markup &amp; structured data</li>
+            <li>Quarterly strategy call</li>
+            <li>Same-day response SLA</li>
+          </ul>
+
+          <p class="not-included"><strong>Not included:</strong> paid ads (Google/Facebook).</p>
+
+          <a href="/free-audit" class="btn btn--navy btn--full">Start with Pro</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- TERMS EXPLAINED -->
+  <!-- SOCIAL PROOF BAND -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="trust-band">
+        <div class="trust-item">
+          <span class="trust-item__heading">60-day guarantee</span>
+          <p>Not happy in the first 60 days? We fix it, or refund your monthly plan fees. No forms, no awkward conversations.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__heading">Chelmsford-based</span>
+          <p>We know the Essex market and you can meet us in person. Local accountability, not a faceless agency.</p>
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__heading">Founder-led</span>
+          <p>Cormac and Mohamod handle your project directly. No account managers, no handoffs to juniors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE ONLY (one-off, separate from plan tiers) -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="website-only-block">
+
+        <div class="website-only-block__header">
+          <div>
+            <span class="label">One-off project</span>
+            <h2 style="margin-top:.5rem; margin-bottom:0;">Just want the website?</h2>
+            <p class="website-only-block__tagline">Just the website. Up to 6 pages. You own it.</p>
+          </div>
+          <div class="website-only-block__price-col">
+            <span class="website-only-block__from">From</span>
+            <span class="website-only-block__amount">£999</span>
+            <span class="website-only-block__cycle">one-off</span>
+          </div>
+        </div>
+
+        <div class="website-only-block__body">
+          <ul class="pricing-card__features website-only-block__features" role="list">
+            <li>Custom design (up to 6 pages)</li>
+            <li>Mobile-first, fast-loading</li>
+            <li>Copy written for you</li>
+            <li>SEO foundations (titles, meta, schema)</li>
+            <li>Google Analytics &amp; Search Console</li>
+            <li>Contact form</li>
+            <li>All logins handed over, you own it</li>
+          </ul>
+          <div class="website-only-block__extras">
+            <p style="font-size:.9375rem;"><strong>Add-on:</strong> extra pages at £99 each.</p>
+            <p class="not-included"><strong>Not included:</strong> ongoing SEO management.</p>
+            <a href="/free-audit" class="btn btn--amber">Get a quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAIN-ENGLISH TERMS (accordion, collapsed by default) -->
   <section class="section section--grey">
     <div class="container container--narrow">
       <div class="section-header">
@@ -170,79 +212,50 @@ const tiers = [
         <h2>What you're agreeing to, clearly.</h2>
       </div>
 
-      <div style="display:grid; gap:1.5rem;">
-        {[
-          {
-            title: '6-month minimum on plans',
-            body: 'SEO takes time. Rankings don\'t move in weeks. We ask for a 6-month minimum because that\'s the honest minimum to see results, and because we put real work in upfront. After 6 months, it\'s rolling monthly. 30 days\' notice to cancel, in writing.',
-          },
-          {
-            title: 'Payment',
-            body: 'Monthly plans are invoiced monthly in advance. The one-off website build is 50% upfront before we start, 50% on completion. We accept bank transfer or direct debit.',
-          },
-          {
-            title: 'What happens if you cancel?',
-            body: 'Your website stays live (it\'s yours). Your Google Business Profile stays claimed (it\'s yours). You lose the ongoing monthly management. We can hand over everything you\'ll need to manage it yourself.',
-          },
-          {
-            title: 'Price increases',
-            body: 'We may increase plan prices with 30 days\' written notice. Existing customers are protected for the remainder of their 6-month term.',
-          },
-        ].map(({ title, body }) => (
-          <div class="card">
-            <h4 style="margin-bottom:.625rem;">{title}</h4>
-            <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">{body}</p>
+      <div class="terms-accordion">
+
+        <details class="terms-item">
+          <summary class="terms-item__q">6-month minimum on plans</summary>
+          <div class="terms-item__a">
+            <p>SEO takes time. Rankings don't move in weeks. We ask for a 6-month minimum because that's the honest minimum to see results, and because we put real work in upfront. After 6 months it's rolling monthly. 30 days' written notice to cancel.</p>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
+        </details>
 
-  <!-- GUARANTEE (prominent) -->
-  <section class="section">
-    <div class="container container--narrow">
-      <div class="section-header text-center">
-        <span class="label">Our promise</span>
-        <h2>60-day walk-away guarantee.</h2>
-        <p class="section-header__sub" style="margin-inline:auto;">
-          This is how we remove all the risk from working with a new studio.
-        </p>
-      </div>
-
-      <Guarantee />
-
-      <div style="margin-top:2rem; background:var(--grey-50); border-radius:var(--r-lg); padding:1.75rem;">
-        <p style="font-size:.9375rem; color:var(--text-muted); max-width:none; line-height:1.75;">
-          We're new. We know that. You're taking a chance on us, and we respect that. The 60-day guarantee means you can start, see what we're like to work with, and walk away with a full refund if it's not right, no questions, no forms to fill in, no awkward conversation. Just a transfer back to your account.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section--grey">
-    <div class="container container--narrow">
-      <div class="section-header">
-        <span class="label">Questions about pricing</span>
-        <h2>Common payment and contract questions.</h2>
-      </div>
-
-      <div class="faq">
-        {[
-          { q: 'Is there a contract?', a: 'Monthly plans have a 6-month minimum term. After that, it\'s rolling monthly with 30 days\' notice to cancel. The one-off website build has no ongoing commitment.' },
-          { q: 'How do I pay?', a: 'Monthly plans are paid by bank transfer or direct debit, monthly in advance. The one-off website build is 50% upfront and 50% on completion. We\'ll always send a proper invoice.' },
-          { q: 'What is the 60-day guarantee exactly?', a: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything paid. No questions asked. No cancellation fees. You don\'t need to give a reason.' },
-          { q: 'Can I upgrade my plan later?', a: 'Yes. Move up to a higher plan at any time, we\'ll invoice the difference from your next billing date. Downgrading is available after your 6-month minimum.' },
-          { q: 'Do you offer discounts for annual payment?', a: 'Not currently, but get in touch and we can discuss what works for you.' },
-        ].map(({ q, a }) => (
-          <div class="faq__item">
-            <button class="faq__question" aria-expanded="false">
-              {q}
-              <span class="faq__icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq__answer"><p>{a}</p></div>
+        <details class="terms-item">
+          <summary class="terms-item__q">Payment</summary>
+          <div class="terms-item__a">
+            <p>Monthly plans are invoiced monthly in advance. Plans that include a website have a one-off £299 setup fee before we start. The standalone Website Only build is 50% upfront before we start, 50% on completion. We accept bank transfer or direct debit.</p>
           </div>
-        ))}
+        </details>
+
+        <details class="terms-item">
+          <summary class="terms-item__q">What happens if you cancel before 6 months?</summary>
+          <div class="terms-item__a">
+            <p>Cancel before your 6-month minimum and the remaining website build balance (£400) becomes payable, then the site is fully yours. After 6 months you owe nothing and keep your website and Google Business Profile. We hand over everything you need to manage it yourself.</p>
+          </div>
+        </details>
+
+        <details class="terms-item">
+          <summary class="terms-item__q">60-day make-it-right guarantee</summary>
+          <div class="terms-item__a">
+            <p>If you're not happy with the work in the first 60 days, we'll fix it. If we can't fix it to your satisfaction, we'll refund your monthly plan fees in full. The website is only ever yours once paid for — nothing to game on either side.</p>
+          </div>
+        </details>
+
+        <details class="terms-item">
+          <summary class="terms-item__q">Price increases</summary>
+          <div class="terms-item__a">
+            <p>We may increase plan prices with 30 days' written notice. Existing customers are protected for the remainder of their current 6-month term.</p>
+          </div>
+        </details>
+
+        <details class="terms-item">
+          <summary class="terms-item__q">Can I upgrade or downgrade?</summary>
+          <div class="terms-item__a">
+            <p>You can move up to a higher plan at any time. We'll invoice the difference from your next billing date. Downgrading is available after your 6-month minimum is complete.</p>
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
@@ -253,3 +266,207 @@ const tiers = [
   />
 
 </Layout>
+
+<style>
+  /* ── Hero note ── */
+  .pricing-hero-note {
+    margin-top: .875rem;
+    font-size: .875rem;
+    color: rgba(255,255,255,.55);
+    font-style: italic;
+  }
+
+  /* ── Anchor strip ── */
+  .anchor-strip {
+    background: var(--amber);
+    padding: .875rem 0;
+    text-align: center;
+  }
+  .anchor-strip p {
+    margin: 0;
+    color: var(--navy);
+    font-size: .9375rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .anchor-strip strong { font-weight: 700; }
+
+  /* ── 3-plan grid ── */
+  .pricing-plans {
+    display: grid;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .pricing-plans {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: stretch;
+    }
+  }
+  /* Growth first on mobile */
+  @media (max-width: 899px) {
+    .pricing-card--featured { order: -1; }
+  }
+
+  /* ── Setup fee note ── */
+  .plan-setup-fee {
+    font-size: .8125rem;
+    font-weight: 500;
+    margin: -.375rem 0 .875rem;
+    color: rgba(255,255,255,.55);
+  }
+  .plan-setup-fee--muted {
+    color: var(--text-muted);
+  }
+
+  /* ── Growth anchor note ── */
+  .plan-anchor-note {
+    background: rgba(255,255,255,.1);
+    border-radius: var(--r);
+    padding: .625rem .875rem;
+    font-size: .875rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,.9);
+  }
+  .plan-anchor-note strong { font-weight: 700; color: #fff; }
+
+  /* ── Trust band ── */
+  .trust-band {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 640px) {
+    .trust-band { grid-template-columns: repeat(3, 1fr); }
+  }
+  .trust-item {
+    padding: 1.5rem;
+    background: white;
+    border-radius: var(--r);
+    border: 1px solid var(--border);
+  }
+  .trust-item__heading {
+    display: block;
+    font-weight: 700;
+    font-size: .875rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: .625rem;
+  }
+  .trust-item p {
+    font-size: .9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── Website Only block ── */
+  .website-only-block {
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 2rem;
+    background: white;
+  }
+  .website-only-block__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .website-only-block__tagline {
+    margin-top: .375rem;
+    font-size: .9375rem;
+    color: var(--text-muted);
+  }
+  .website-only-block__price-col {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .website-only-block__from {
+    display: block;
+    font-size: .6875rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .website-only-block__amount {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .website-only-block__cycle {
+    display: block;
+    font-size: .8125rem;
+    color: var(--text-muted);
+    margin-top: .25rem;
+  }
+  .website-only-block__body {
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 600px) {
+    .website-only-block__body {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+  }
+  .website-only-block__features { margin: 0; }
+  .website-only-block__extras {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    min-width: 200px;
+  }
+
+  /* ── Terms accordion ── */
+  .terms-accordion {
+    border-top: 1.5px solid var(--border);
+  }
+  .terms-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .terms-item__q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.125rem 0;
+    font-weight: 600;
+    font-size: .9375rem;
+    cursor: pointer;
+    list-style: none;
+    color: var(--text);
+    user-select: none;
+  }
+  .terms-item__q::-webkit-details-marker { display: none; }
+  .terms-item__q::after {
+    content: '+';
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: transform .18s ease;
+    line-height: 1;
+  }
+  details[open] > .terms-item__q::after {
+    transform: rotate(45deg);
+  }
+  .terms-item__a {
+    padding-bottom: 1.125rem;
+  }
+  .terms-item__a p {
+    font-size: .9375rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: none;
+    margin: 0;
+  }
+</style>

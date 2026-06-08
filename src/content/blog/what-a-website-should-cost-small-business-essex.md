@@ -57,9 +57,9 @@ Why pay monthly instead of buying outright? A few honest reasons.
 
 **The SEO work is ongoing.** Getting onto page one of Google isn't a task you do once and tick off. It requires content, technical maintenance, review building, and local signals, built up consistently over months. A monthly plan keeps that work happening.
 
-**You spread the cost.** A £999 upfront build isn't possible for every business at every moment. At £199/month, you get a professional site and monthly SEO management for roughly the price of a couple of small jobs.
+**You spread the cost.** A £999 upfront build isn't possible for every business at every moment. At £249/month, you get a professional site and monthly SEO management for roughly the price of a couple of small jobs.
 
-Our plans start at £199/month. We ask for a 6-month minimum, because that's genuinely how long it takes to see SEO results. Anyone who says differently is either misleading you or selling something that isn't really SEO. After 6 months, it's rolling monthly.
+Our plans start at £249/month. We ask for a 6-month minimum, because that's genuinely how long it takes to see SEO results. Anyone who says differently is either misleading you or selling something that isn't really SEO. After 6 months, it's rolling monthly.
 
 ## What to ask any web designer before you hire them
 
