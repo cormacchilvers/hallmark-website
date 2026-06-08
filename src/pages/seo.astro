@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Guarantee from '../components/Guarantee.astro';
+import AuditCTA from '../components/AuditCTA.astro';
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does SEO take to work?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Honestly, 3–6 months before you see meaningful movement in rankings. Anyone promising results in weeks is misleading you. That\'s why we have a 6-month minimum on plans, because it\'s the honest minimum to see what SEO can do.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What\'s the 6-month term about?',
+      acceptedAnswer: { '@type': 'Answer', text: 'SEO is not a one-off job. It takes months of consistent work, content, technical fixes, review building, local signals, before the rankings move. A 6-month minimum means we both commit to doing it properly. After 6 months, it\'s rolling monthly with 30 days\' notice to cancel.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need a new website to start SEO?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Not necessarily. We can manage your Google Business Profile and run an SEO campaign alongside an existing site. But if your site is very slow or poorly structured, it will limit how far SEO can take you. We\'ll tell you honestly in the free audit.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Google Business Profile management?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Your Google Business Profile is the listing that appears on Google Maps and in local search results. We claim it (if unclaimed), complete it, add photos, respond to reviews, post updates, and keep it optimised so Google shows you to more local searchers.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What\'s the 60-day guarantee?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If you\'re not happy in the first 60 days, we\'ll refund everything. No questions asked.' }
+    },
+  ],
+});
+---
+
+<Layout
+  title="SEO & Google Business Profile Essex | From £199/mo | Hallmark Studio"
+  description="Local SEO and Google Business Profile management for Essex small businesses. Get found on Google in Chelmsford and beyond. From £199/month."
+  schemaExtra={faqSchema}
+>
+
+  <!-- HERO -->
+  <div class="page-header">
+    <div class="container">
+      <span class="label">SEO &amp; Google, Chelmsford &amp; Essex</span>
+      <h1>Get found on Google by customers who are ready to buy.</h1>
+      <p class="page-header__sub">
+        Local SEO and Google Business Profile management for Essex small businesses.
+        Done for you, every month. From £199/month.
+      </p>
+      <div class="hero__actions" style="margin-top:2rem;">
+        <a href="/free-audit" class="btn btn--amber btn--lg">Get a Free Google Audit</a>
+        <a href="/pricing" class="btn btn--outline-white">See plans</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE PROBLEM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">The problem</span>
+        <h2>Not appearing in local search is costing you customers every day.</h2>
+        <p class="section-header__sub">
+          People in Chelmsford, Colchester, and Southend are searching for exactly what you do right now. If your business isn't at the top of Google, and on Maps, those calls go to whoever is.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4 style="margin-bottom:.625rem;">The local map pack</h4>
+          <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">
+            When someone searches "plumber Chelmsford" or "hair salon Colchester", Google shows three local results at the top, with a map. These three get the vast majority of clicks. Being in them is worth more than any paid ad.
+          </p>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:.625rem;">Your Google Business Profile</h4>
+          <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">
+            A complete, active Google Business Profile is the single biggest factor in whether you appear in local results. Most small business profiles are incomplete, outdated, or unclaimed entirely.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What's included</span>
+        <h2>Everything it takes to rank locally, done for you.</h2>
+        <p class="section-header__sub">Plain English. No jargon. This is what we actually do each month.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '📍', title: 'Google Business Profile setup', body: 'Claim, verify, and fully complete your profile. Photos, description, categories, service areas, opening hours, all done properly.' },
+          { icon: '🔄', title: 'Monthly profile management', body: 'Regular posts, photo updates, review responses, and profile optimisation. Active profiles rank higher.' },
+          { icon: '⭐', title: 'Review strategy', body: 'We help you get more genuine reviews, with a process that makes it easy for happy customers to leave one. More reviews = higher rankings.' },
+          { icon: '📄', title: 'Local content', body: 'Monthly content targeted at local search terms. When someone searches for your service in your town, your site should have an answer.' },
+          { icon: '🔧', title: 'Technical SEO', body: 'Page speed, mobile usability, broken links, schema markup. The technical foundations that Google uses to rank you.' },
+          { icon: '📊', title: 'Monthly report', body: 'Plain-English summary of what we did, what\'s changed, and what we\'re working on next. No vanity metrics.' },
+        ].map(({ icon, title, body }) => (
+          <div class="card">
+            <div style="font-size:1.75rem; margin-bottom:.875rem;" aria-hidden="true">{icon}</div>
+            <h4 style="margin-bottom:.5rem;">{title}</h4>
+            <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SUMMARY -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Plans</span>
+        <h2>Honest prices. Clear terms.</h2>
+        <p class="section-header__sub">6-month minimum on all plans, because that's how long SEO actually takes. After that, rolling monthly, 30 days' notice to cancel.</p>
+      </div>
+
+      <div style="display:grid; gap:1.25rem;">
+        {[
+          {
+            name: 'Starter',
+            price: '£199',
+            desc: 'Google Business Profile setup + monthly management. No website included.',
+            features: ['Google Business Profile claimed & completed', 'Monthly profile posts & updates', 'Review response management', 'Monthly report'],
+          },
+          {
+            name: 'Growth',
+            price: '£399',
+            desc: 'Website + SEO. The most popular plan for established businesses.',
+            features: ['Everything in Starter', 'Custom website build included', 'Monthly local content', 'Technical SEO monitoring', 'Priority support'],
+            featured: true,
+          },
+          {
+            name: 'Pro',
+            price: '£799',
+            desc: 'For businesses serious about dominating local search.',
+            features: ['Everything in Growth', 'Full local SEO campaign', 'Competitor analysis', 'Link building', 'Quarterly strategy call'],
+          },
+        ].map(({ name, price, desc, features, featured }) => (
+          <div style={`background:${featured ? 'var(--navy)' : 'var(--grey-50)'}; border:1px solid ${featured ? 'var(--navy)' : 'var(--border)'}; border-radius:var(--r-lg); padding:2rem 2rem 2rem 2rem;`}>
+            <p style={`font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:${featured ? 'var(--amber)' : 'var(--text-muted)'}; margin-bottom:1rem;`}>{name}</p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1.5rem; align-items:center;">
+              <div>
+                <div style={`font-family:var(--font-serif); font-size:2.5rem; font-weight:700; color:${featured ? 'var(--white)' : 'var(--navy)'}; line-height:1;`}>{price}<span style={`font-size:1rem; font-weight:400; color:${featured ? 'rgba(255,255,255,.5)' : 'var(--text-muted)'};`}>/month</span></div>
+                <p style={`color:${featured ? 'rgba(255,255,255,.6)' : 'var(--text-muted)'}; font-size:.875rem; margin-top:.375rem;`}>{desc}</p>
+              </div>
+              <ul style="display:flex; flex-direction:column; gap:.5rem;">
+                {features.map(f => (
+                  <li style={`display:flex; gap:.625rem; font-size:.9rem; color:${featured ? 'rgba(255,255,255,.82)' : 'var(--text)'};`}>
+                    <span style={`color:${featured ? 'var(--amber)' : 'var(--success)'}; font-weight:700; flex-shrink:0;`}>✓</span> {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="margin-top:2rem;">
+        <Guarantee />
+      </div>
+
+      <p style="font-size:.875rem; color:var(--text-muted); margin-top:1.25rem; max-width:none;">
+        Full pricing breakdown, including what's not included, on the <a href="/pricing" style="color:var(--navy); font-weight:600;">Pricing page →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--grey">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Common questions</span>
+        <h2>Things people usually ask about SEO.</h2>
+      </div>
+
+      <div class="faq">
+        {[
+          { q: 'How long does SEO take to work?', a: 'Honestly, 3–6 months before you see meaningful movement in rankings. Anyone promising results in weeks is misleading you. That\'s why we have a 6-month minimum on plans, because it\'s the honest minimum to give SEO a proper chance.' },
+          { q: 'What\'s the 6-month term about?', a: 'SEO is not a one-off job. Rankings are built up over months of consistent work, technical fixes, content, local signals, review building. A 6-month minimum means we both commit to doing it properly. After 6 months, it\'s rolling monthly with 30 days\' notice to cancel.' },
+          { q: 'Do I need a new website to start SEO?', a: 'Not necessarily. We can start with your Google Business Profile on the Starter plan without changing your website at all. But if your website is very slow or has structural problems, it\'ll limit how far SEO can take you. We\'ll tell you honestly.' },
+          { q: 'What is Google Business Profile management?', a: 'It\'s the listing that shows on Google Maps and in local results when someone searches for a service near them. We claim it, complete it properly, keep it active with regular posts, respond to reviews on your behalf, and optimise it to rank higher in local search.' },
+          { q: 'What\'s the 60-day guarantee?', a: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything. No questions asked. No awkward conversations.' },
+        ].map(({ q, a }) => (
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              {q}
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><p>{a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AuditCTA
+    heading="Find out how visible you are on Google."
+    sub="We'll audit your Google Business Profile and website and tell you exactly what's holding you back, free, in 15 minutes."
+  />
+
+</Layout>

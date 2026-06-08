@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact Hallmark Studio | Web Design & SEO Chelmsford, Essex"
+  description="Get in touch with Hallmark Studio. Web design and SEO agency based in Chelmsford, Essex. Call 07570 947291 or email hello@hallmarkstudio.com."
+>
+
+  <!-- HERO -->
+  <div class="page-header">
+    <div class="container">
+      <span class="label">Get in touch</span>
+      <h1>We'd love to hear about your business.</h1>
+      <p class="page-header__sub">
+        Based in Chelmsford, working with businesses across Essex. We reply within one working day.
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid; gap:3.5rem;" class="contact-grid">
+
+        <!-- FORM -->
+        <div>
+          <h2 style="font-size:1.375rem; margin-bottom:1.5rem;">Send us a message</h2>
+
+          <form
+            class="form js-audit-form"
+            action="https://formspree.io/f/mgobkwjb"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="New contact, Hallmark Studio" />
+
+            <div class="form__field">
+              <label for="c-name">Your name</label>
+              <input
+                type="text" id="c-name" name="name"
+                placeholder="Your name" required autocomplete="name"
+              />
+              <span class="form__error" role="alert"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="c-email">Email or phone</label>
+              <input
+                type="text" id="c-email" name="contact"
+                placeholder="hello@example.com or 07700 900000" required
+                autocomplete="email"
+              />
+              <span class="form__error" role="alert"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="c-msg">What can we help with?</label>
+              <textarea
+                id="c-msg" name="message" rows="5"
+                placeholder="Tell us a bit about your business and what you're looking for…"
+                required
+              ></textarea>
+              <span class="form__error" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--amber btn--full">
+              Send message
+            </button>
+          </form>
+
+          <div class="form__success" role="status">
+            ✓ Thanks, we'll reply within one working day.
+          </div>
+        </div>
+
+        <!-- CONTACT DETAILS -->
+        <div>
+          <h2 style="font-size:1.375rem; margin-bottom:1.5rem;">Other ways to reach us</h2>
+
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+            <div>
+              <p class="label" style="margin-bottom:.375rem;">Phone</p>
+              <a
+                href="tel:07570947291"
+                style="font-size:1.25rem; font-weight:700; color:var(--navy); display:block;"
+              >
+                07570 947291
+              </a>
+              <p style="font-size:.875rem; color:var(--text-muted); margin-top:.25rem; max-width:none;">
+                Mon–Fri, 9am–6pm
+              </p>
+            </div>
+
+            <div>
+              <p class="label" style="margin-bottom:.375rem;">Email</p>
+              <a
+                href="mailto:hello@hallmarkstudio.com"
+                style="font-size:1.0625rem; font-weight:600; color:var(--navy);"
+              >
+                hello@hallmarkstudio.com
+              </a>
+            </div>
+
+            <div>
+              <p class="label" style="margin-bottom:.375rem;">Book a call</p>
+              <a
+                href="https://calendly.com/d/cx5p-3yv-z9y/free-discovery-call"
+                class="btn btn--navy"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display:inline-flex;"
+              >
+                Book a free discovery call →
+              </a>
+              <p style="font-size:.8125rem; color:var(--text-muted); margin-top:.625rem; max-width:none;">
+                15 minutes. Pick a time that works for you.
+              </p>
+            </div>
+
+            <div style="padding-top:1.5rem; border-top:1px solid var(--border);">
+              <p class="label" style="margin-bottom:.375rem;">Where we work</p>
+              <p style="font-size:.9375rem; color:var(--text-muted); max-width:none;">
+                Based in Chelmsford, Essex. We work with businesses across the county, Colchester, Southend-on-Sea, Brentwood, Basildon, Witham, Braintree, and beyond.
+              </p>
+              <div class="areas" style="margin-top:1rem;">
+                <span class="area-chip">Chelmsford</span>
+                <span class="area-chip">Colchester</span>
+                <span class="area-chip">Southend</span>
+                <span class="area-chip">Brentwood</span>
+                <span class="area-chip">Essex</span>
+              </div>
+            </div>
+
+            <div style="padding-top:1.5rem; border-top:1px solid var(--border);">
+              <p class="label" style="margin-bottom:.875rem;">Follow us</p>
+              <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                {[
+                  { href: 'https://www.linkedin.com/company/hallmarkstudio', label: 'LinkedIn' },
+                  { href: 'https://www.instagram.com/hallmarkstudio.web', label: 'Instagram' },
+                  { href: 'https://www.x.com/byhallmark', label: 'X' },
+                  { href: 'https://www.tiktok.com/@hallmark.studio', label: 'TikTok' },
+                ].map(({ href, label }) => (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn--outline"
+                    style="padding:.625rem 1.125rem; font-size:.875rem;"
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (min-width: 1024px) {
+    .contact-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: start;
+    }
+  }
+</style>

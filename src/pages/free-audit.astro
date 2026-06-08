@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Guarantee from '../components/Guarantee.astro';
+---
+
+<Layout
+  title="Get a Free Website & Google Audit | Hallmark Studio"
+  description="Free 15-minute audit of your website and Google Business Profile. We'll tell you exactly what's losing you customers, no pitch, just honest feedback."
+>
+
+  <!-- MINIMAL NAV OVERRIDE (logo + phone only, no links) -->
+  <style>
+    .nav__links { display: none !important; }
+    .nav__cta   { display: none !important; }
+    .nav__hamburger { display: none !important; }
+    .nav__mobile { display: none !important; }
+  </style>
+
+  <!-- HERO / OFFER -->
+  <section style="background:var(--navy); padding-top:calc(var(--nav-h) + 4rem); padding-bottom:5rem;">
+    <div class="container">
+      <div style="max-width:720px; margin-inline:auto; text-align:center;">
+        <span class="label" style="margin-bottom:1.25rem; display:block;">Free, no obligation</span>
+        <h1 style="color:var(--white); margin-bottom:1.25rem;">
+          Find out what your website and Google listing are costing you.
+        </h1>
+        <p style="color:rgba(255,255,255,.72); font-size:clamp(1.0625rem, 1.5vw + .125rem, 1.25rem); margin-inline:auto;">
+          A free 15-minute audit of your website and Google Business Profile. We'll tell you what's losing you customers and what we'd fix first.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET + FORM -->
+  <section class="section">
+    <div class="container">
+      <div style="display:grid; gap:3.5rem; align-items:start;" class="audit-page-grid">
+
+        <!-- LEFT: WHAT YOU GET -->
+        <div>
+          <span class="label">What happens</span>
+          <h2 style="margin-bottom:1.5rem;">Honest feedback in 15 minutes.</h2>
+
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            {[
+              {
+                num: '1',
+                title: 'You submit the form',
+                body: 'Tell us your name, how to reach you, and your website address. That\'s it.',
+              },
+              {
+                num: '2',
+                title: 'We look at your website and Google listing',
+                body: 'We check your site speed, mobile usability, headline clarity, calls to action, and whether your Google Business Profile exists and is complete.',
+              },
+              {
+                num: '3',
+                title: 'We send you specific feedback',
+                body: 'Not a sales pitch. A clear list of what\'s losing you customers and what we\'d fix first, in plain English.',
+              },
+              {
+                num: '4',
+                title: 'You decide what to do with it',
+                body: 'Use the advice yourself. Ask someone else to fix it. Or ask us to. All three are fine. There\'s no pressure.',
+              },
+            ].map(({ num, title, body }) => (
+              <div style="display:flex; gap:1.25rem; align-items:flex-start;">
+                <div style="flex-shrink:0; width:36px; height:36px; background:var(--white); color:var(--navy); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.875rem; font-weight:800; border:2px solid var(--border);">
+                  {num}
+                </div>
+                <div>
+                  <h4 style="margin-bottom:.375rem;">{title}</h4>
+                  <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
+        <!-- RIGHT: FORM -->
+        <div style="background:var(--navy); border-radius:var(--r-lg); padding:2.5rem;">
+          <h2 style="color:var(--white); font-size:1.5rem; margin-bottom:.625rem;">
+            Get your free audit
+          </h2>
+          <p style="color:rgba(255,255,255,.72); font-size:.9375rem; margin-bottom:1.75rem; max-width:none;">
+            We'll reply within one working day.
+          </p>
+
+          <form
+            class="form form--dark js-audit-form"
+            action="https://formspree.io/f/mgobkwjb"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Free Audit Request, Hallmark Studio" />
+
+            <div class="form__field">
+              <label for="a-name">Your name</label>
+              <input
+                type="text" id="a-name" name="name"
+                placeholder="e.g. Sarah" required autocomplete="name"
+              />
+              <span class="form__error" role="alert"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="a-email">Email or phone</label>
+              <input
+                type="text" id="a-email" name="contact"
+                placeholder="hello@example.com or 07700 900000" required
+                autocomplete="email"
+              />
+              <span class="form__error" role="alert"></span>
+            </div>
+
+            <div class="form__field">
+              <label for="a-url">Your website address (if you have one)</label>
+              <input
+                type="text" id="a-url" name="website"
+                placeholder="www.yourbusiness.co.uk"
+                autocomplete="url"
+              />
+            </div>
+
+            <button type="submit" class="btn btn--amber btn--full btn--lg">
+              Get my free audit
+            </button>
+
+            <p style="color:rgba(255,255,255,.55); font-size:.8125rem; text-align:center; margin-top:.875rem; max-width:none;">
+              Free. No obligation. No spam.
+            </p>
+          </form>
+
+          <div class="form__success" role="status">
+            ✓ Brilliant, we'll be in touch within one working day.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDLY ALTERNATIVE -->
+  <section class="section section--grey">
+    <div class="container container--narrow" style="text-align:center;">
+      <h3 style="margin-bottom:.75rem;">Prefer to talk?</h3>
+      <p style="color:var(--text-muted); margin-inline:auto;">
+        Book a free 15-minute discovery call on Calendly. Same thing, just live.
+      </p>
+      <a
+        href="https://calendly.com/d/cx5p-3yv-z9y/free-discovery-call"
+        class="btn btn--navy"
+        style="margin-top:1.5rem;"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a call instead →
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  @media (min-width: 1024px) {
+    .audit-page-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Guarantee from '../components/Guarantee.astro';
+import AuditCTA from '../components/AuditCTA.astro';
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is there a contract?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans have a 6-month minimum term. After that, it\'s rolling monthly with 30 days\' notice to cancel. The one-off website build has no ongoing contract.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I pay?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Monthly plans are paid monthly by direct debit or bank transfer. The one-off website build is 50% upfront, 50% on completion. We\'ll send you an invoice.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the 60-day guarantee?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything. No questions asked. No cancellation fees. We\'re confident in what we do, this is how we show it.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I upgrade my plan later?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. You can move up to a higher plan at any time. We\'ll just invoice the difference from your next billing date.' }
+    },
+  ],
+});
+
+const tiers = [
+  {
+    name: 'Starter',
+    price: '£199',
+    cycle: '/month',
+    desc: 'Google presence sorted.',
+    features: [
+      'Google Business Profile claimed & completed',
+      'Monthly profile posts & photo updates',
+      'Review response management',
+      'NAP consistency check (name, address, phone)',
+      'Monthly progress report',
+    ],
+    notIncluded: 'No website included. No ongoing SEO content.',
+    cta: '/free-audit',
+    ctaLabel: 'Start with Starter',
+  },
+  {
+    name: 'Growth',
+    price: '£399',
+    cycle: '/month',
+    desc: 'Website + monthly SEO.',
+    features: [
+      'Everything in Starter',
+      'Custom website build included (up to 6 pages)',
+      'Mobile-first, fast-loading design',
+      'Copy written for you',
+      'Monthly local SEO content (2 pages/posts)',
+      'Technical SEO monitoring & fixes',
+      'Priority email support',
+    ],
+    notIncluded: 'Full link-building campaign not included.',
+    cta: '/free-audit',
+    ctaLabel: 'Start with Growth',
+    featured: true,
+    badge: 'Most popular',
+  },
+  {
+    name: 'Pro',
+    price: '£799',
+    cycle: '/month',
+    desc: 'Serious about local dominance.',
+    features: [
+      'Everything in Growth',
+      'Full local SEO campaign',
+      'Competitor research & gap analysis',
+      'Monthly link-building outreach',
+      'Schema markup & structured data',
+      'Quarterly strategy call',
+      'Same-day response SLA',
+    ],
+    notIncluded: 'Paid ads (Google/Facebook) not included.',
+    cta: '/free-audit',
+    ctaLabel: 'Start with Pro',
+  },
+  {
+    name: 'Website Only',
+    price: 'From £599',
+    cycle: 'one-off',
+    desc: 'Just the website. Quoted by scope.',
+    features: [
+      'Custom design (up to 6 pages)',
+      'Mobile-first, fast-loading',
+      'Copy written for you',
+      'SEO foundations (titles, meta, schema)',
+      'Google Analytics & Search Console',
+      'Contact form',
+      'All logins handed over, you own it',
+    ],
+    notIncluded: 'No ongoing SEO management.',
+    cta: '/free-audit',
+    ctaLabel: 'Get a quote',
+  },
+];
+---
+
+<Layout
+  title="Pricing | Web Design & SEO Essex | Hallmark Studio"
+  description="Transparent pricing for web design and SEO in Essex. Starter from £199/month, website build from £599. 60-day walk-away guarantee."
+  schemaExtra={faqSchema}
+>
+
+  <!-- HERO -->
+  <div class="page-header">
+    <div class="container">
+      <span class="label">Pricing, no hidden fees</span>
+      <h1>Prices on the table. No surprises.</h1>
+      <p class="page-header__sub">
+        We publish real prices because we're confident in what we do. No "call us for a quote" until you've already invested an hour talking to us.
+      </p>
+    </div>
+  </div>
+
+  <!-- PRICING TABLE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="label">Monthly plans + one-off build</span>
+        <h2>Pick what fits where you are right now.</h2>
+        <p class="section-header__sub" style="margin-inline:auto;">
+          All monthly plans: 6-month minimum, then rolling monthly with 30 days' notice to cancel.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        {tiers.map(({ name, price, cycle, desc, features, notIncluded, cta, ctaLabel, featured, badge }) => (
+          <div class={`pricing-card${featured ? ' pricing-card--featured' : ''}`}>
+            {badge && <span class="pricing-card__badge">{badge}</span>}
+            <h3>{name}</h3>
+            <p class="pricing-card__desc">{desc}</p>
+            <div class="pricing-card__price">{price}</div>
+            <p class="pricing-card__cycle">{cycle}</p>
+
+            <hr class="pricing-card__divider" />
+
+            <ul class="pricing-card__features" role="list">
+              {features.map(f => <li>{f}</li>)}
+            </ul>
+
+            <p class="not-included">
+              <strong>Not included:</strong> {notIncluded}
+            </p>
+
+            <a href={cta} class={`btn btn--full ${featured ? 'btn--amber' : 'btn--navy'}`}>
+              {ctaLabel}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS EXPLAINED -->
+  <section class="section section--grey">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Plain-English terms</span>
+        <h2>What you're agreeing to, clearly.</h2>
+      </div>
+
+      <div style="display:grid; gap:1.5rem;">
+        {[
+          {
+            title: '6-month minimum on plans',
+            body: 'SEO takes time. Rankings don\'t move in weeks. We ask for a 6-month minimum because that\'s the honest minimum to see results, and because we put real work in upfront. After 6 months, it\'s rolling monthly. 30 days\' notice to cancel, in writing.',
+          },
+          {
+            title: 'Payment',
+            body: 'Monthly plans are invoiced monthly in advance. The one-off website build is 50% upfront before we start, 50% on completion. We accept bank transfer or direct debit.',
+          },
+          {
+            title: 'What happens if you cancel?',
+            body: 'Your website stays live (it\'s yours). Your Google Business Profile stays claimed (it\'s yours). You lose the ongoing monthly management. We can hand over everything you\'ll need to manage it yourself.',
+          },
+          {
+            title: 'Price increases',
+            body: 'We may increase plan prices with 30 days\' written notice. Existing customers are protected for the remainder of their 6-month term.',
+          },
+        ].map(({ title, body }) => (
+          <div class="card">
+            <h4 style="margin-bottom:.625rem;">{title}</h4>
+            <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE (prominent) -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="section-header text-center">
+        <span class="label">Our promise</span>
+        <h2>60-day walk-away guarantee.</h2>
+        <p class="section-header__sub" style="margin-inline:auto;">
+          This is how we remove all the risk from working with a new studio.
+        </p>
+      </div>
+
+      <Guarantee />
+
+      <div style="margin-top:2rem; background:var(--grey-50); border-radius:var(--r-lg); padding:1.75rem;">
+        <p style="font-size:.9375rem; color:var(--text-muted); max-width:none; line-height:1.75;">
+          We're new. We know that. You're taking a chance on us, and we respect that. The 60-day guarantee means you can start, see what we're like to work with, and walk away with a full refund if it's not right, no questions, no forms to fill in, no awkward conversation. Just a transfer back to your account.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--grey">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Questions about pricing</span>
+        <h2>Common payment and contract questions.</h2>
+      </div>
+
+      <div class="faq">
+        {[
+          { q: 'Is there a contract?', a: 'Monthly plans have a 6-month minimum term. After that, it\'s rolling monthly with 30 days\' notice to cancel. The one-off website build has no ongoing commitment.' },
+          { q: 'How do I pay?', a: 'Monthly plans are paid by bank transfer or direct debit, monthly in advance. The one-off website build is 50% upfront and 50% on completion. We\'ll always send a proper invoice.' },
+          { q: 'What is the 60-day guarantee exactly?', a: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything paid. No questions asked. No cancellation fees. You don\'t need to give a reason.' },
+          { q: 'Can I upgrade my plan later?', a: 'Yes. Move up to a higher plan at any time, we\'ll invoice the difference from your next billing date. Downgrading is available after your 6-month minimum.' },
+          { q: 'Do you offer discounts for annual payment?', a: 'Not currently, but get in touch and we can discuss what works for you.' },
+        ].map(({ q, a }) => (
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              {q}
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer"><p>{a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AuditCTA
+    heading="Not sure which plan is right for you?"
+    sub="Get a free 15-minute audit. We'll tell you what your business actually needs, and be honest if a cheaper option would do the job."
+  />
+
+</Layout>

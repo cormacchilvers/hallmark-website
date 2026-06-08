@@ -1,0 +1,79 @@
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <p class="cookie-banner__text">
+    We use cookies to analyse site traffic via Google Analytics.
+    <a href="/privacy">Privacy policy</a>.
+  </p>
+  <div class="cookie-banner__actions">
+    <button id="cookie-accept" class="btn btn--amber">Accept cookies</button>
+    <button id="cookie-decline" class="btn btn--outline-white">Essential only</button>
+  </div>
+</div>
+
+<style>
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding: 1.25rem 2rem;
+  display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+  z-index: 9000;
+  transform: translateY(100%);
+  transition: transform .3s ease;
+}
+.cookie-banner.is-visible { transform: translateY(0); }
+.cookie-banner__text {
+  color: rgba(255,255,255,.78);
+  font-size: .9375rem;
+  flex: 1; min-width: 200px;
+  max-width: none;
+}
+.cookie-banner__text a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-banner__actions {
+  display: flex; gap: .75rem; flex-shrink: 0; flex-wrap: wrap;
+}
+.cookie-banner .btn {
+  padding: .625rem 1.25rem;
+  font-size: .875rem;
+}
+</style>
+
+<script>
+const CONSENT_KEY = 'hs-cookie-consent';
+const banner = document.getElementById('cookie-banner') as HTMLElement | null;
+const acceptBtn = document.getElementById('cookie-accept');
+const declineBtn = document.getElementById('cookie-decline');
+
+if (!localStorage.getItem(CONSENT_KEY)) {
+  setTimeout(() => {
+    banner?.classList.add('is-visible');
+    applyBodyPad();
+  }, 800);
+}
+
+function dismiss() {
+  banner?.classList.remove('is-visible');
+}
+
+function applyBodyPad() {
+  const h = banner?.offsetHeight ?? 0;
+  document.body.style.paddingBottom = banner?.classList.contains('is-visible') ? h + 'px' : '';
+}
+
+acceptBtn?.addEventListener('click', () => {
+  localStorage.setItem(CONSENT_KEY, 'accepted');
+  dismiss();
+  document.body.style.paddingBottom = '';
+});
+
+declineBtn?.addEventListener('click', () => {
+  localStorage.setItem(CONSENT_KEY, 'declined');
+  (window as any)['ga-disable-G-YDTCT024ER'] = true;
+  dismiss();
+  document.body.style.paddingBottom = '';
+});
+</script>

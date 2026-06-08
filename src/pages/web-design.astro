@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Guarantee from '../components/Guarantee.astro';
+import AuditCTA from '../components/AuditCTA.astro';
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does a website build take?',
+      acceptedAnswer: { '@type': 'Answer', text: "Most sites take 2–4 weeks from when we receive your content. The biggest factor is how quickly we can get your input. We'll agree a clear timeline before we start." }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do I need to write the words myself?',
+      acceptedAnswer: { '@type': 'Answer', text: "No. We write the copy as part of the build. We'll ask you a few questions about your business to make sure it sounds like you, not like an agency." }
+    },
+    {
+      '@type': 'Question',
+      name: 'What if I already have a website?',
+      acceptedAnswer: { '@type': 'Answer', text: 'That\'s fine. We can either rebuild it completely or work alongside it. We\'ll tell you honestly in the free audit whether a full rebuild is necessary or whether fixes would be enough.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Who owns the website after it\'s built?',
+      acceptedAnswer: { '@type': 'Answer', text: 'You do. We hand over all logins, files, and access. It\'s yours outright, no tie-in.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'Will my website work on mobile?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. We build mobile-first, meaning we design for the phone first and scale up to desktop. Over 60% of local searches happen on mobile, so this is non-negotiable.' }
+    },
+    {
+      '@type': 'Question',
+      name: 'What\'s the 60-day guarantee?',
+      acceptedAnswer: { '@type': 'Answer', text: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything. No questions asked, no awkward conversations.' }
+    },
+  ],
+});
+---
+
+<Layout
+  title="Web Design Chelmsford & Essex | From £999 | Hallmark Studio"
+  description="Custom website design for Essex small businesses. Fast, mobile-first, built to rank on Google. From £999 one-off. Based in Chelmsford."
+  schemaExtra={faqSchema}
+>
+
+  <!-- HERO -->
+  <div class="page-header">
+    <div class="container">
+      <span class="label">Web Design, Chelmsford &amp; Essex</span>
+      <h1>A website that gets you more calls and bookings.</h1>
+      <p class="page-header__sub">
+        Custom-built, mobile-first, and designed to rank on Google.
+        No templates. No page builders. From £999.
+      </p>
+      <div class="hero__actions" style="margin-top:2rem;">
+        <a href="/free-audit" class="btn btn--amber btn--lg">Get a Free Audit</a>
+        <a href="/pricing" class="btn btn--outline-white">See full pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Who we work with</span>
+        <h2>Built for businesses that live and die by local reputation.</h2>
+        <p class="section-header__sub">
+          We build for trades, salons, hospitality, and local service businesses across Essex.
+          If getting found in your town drives your enquiries, this is what we do.
+        </p>
+      </div>
+
+      <div class="industry-grid">
+        {[
+          { name: 'Trades & Construction',   desc: 'Plumbers, electricians, builders, decorators' },
+          { name: 'Hair & Beauty',            desc: 'Salons, barbers, nail studios, aesthetics' },
+          { name: 'Hospitality',              desc: 'Cafés, restaurants, pubs, takeaways' },
+          { name: 'Health & Fitness',         desc: 'Personal trainers, gyms, physio, yoga' },
+          { name: 'Professional Services',    desc: 'Accountants, solicitors, mortgage brokers' },
+          { name: 'Childcare & Education',    desc: 'Nurseries, tutors, activity providers' },
+        ].map(({ name, desc }) => (
+          <div class="industry-item">
+            <strong class="industry-name">{name}</strong>
+            <span class="industry-desc">{desc}</span>
+          </div>
+        ))}
+      </div>
+
+      <p class="location-line">
+        Working across <strong>Chelmsford, Colchester, Southend-on-Sea, Brentwood,</strong> and the wider Essex area.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What's included</span>
+        <h2>Everything it takes to build something that actually works.</h2>
+        <p class="section-header__sub">No extra charges for the basics. Everything below is included at £999.</p>
+      </div>
+
+      <div class="grid-3">
+        {[
+          { icon: '📱', title: 'Mobile-first design', body: 'Built for the phone first. Readable, tappable, and fast on any screen size.' },
+          { icon: '⚡', title: 'Fast loading', body: 'Target: under 2 seconds and Lighthouse 95+ on mobile. Slow sites lose customers.' },
+          { icon: '📝', title: 'Copy written for you', body: 'We write the words. You answer our brief. It\'ll sound like a person, not an agency.' },
+          { icon: '🔍', title: 'SEO foundations', body: 'Proper title tags, meta descriptions, heading structure, schema markup, and Google Search Console setup.' },
+          { icon: '📞', title: 'Clear calls to action', body: 'Every page tells your visitor what to do next. Phone number at the top. Buttons that get clicked.' },
+          { icon: '🛠️', title: 'You own it outright', body: 'All logins, all files, all yours. No tie-in, no annual fee to "keep your site live".' },
+        ].map(({ icon, title, body }) => (
+          <div class="card">
+            <div style="font-size:1.75rem; margin-bottom:.875rem;" aria-hidden="true">{icon}</div>
+            <h4 style="margin-bottom:.5rem;">{title}</h4>
+            <p style="color:var(--text-muted); font-size:.9375rem; max-width:none;">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SUMMARY -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Pricing</span>
+        <h2>One price. No surprises.</h2>
+      </div>
+
+      <div style="background:var(--grey-50); border:1px solid var(--border); border-radius:var(--r-lg); padding:2.5rem;">
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; align-items:flex-start; justify-content:space-between;">
+          <div>
+            <p class="label">Website Build</p>
+            <div style="font-family:var(--font-serif); font-size:3rem; font-weight:700; color:var(--navy); line-height:1;">£999</div>
+            <p style="color:var(--text-muted); margin-top:.375rem;">One-off fee. You own it.</p>
+          </div>
+          <div style="flex:1; min-width:260px;">
+            <ul style="display:flex; flex-direction:column; gap:.625rem;">
+              {[
+                'Up to 6 pages',
+                'Mobile-first, custom design',
+                'Copy written for you',
+                'SEO foundations included',
+                'Fast hosting setup',
+                'Google Analytics & Search Console',
+                'Contact form',
+                'You own everything',
+              ].map(f => (
+                <li style="display:flex; gap:.625rem; align-items:flex-start; font-size:.9375rem; color:var(--text);">
+                  <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <p style="font-size:.875rem; color:var(--text-muted); max-width:none;">
+            <strong style="color:var(--navy);">Not included:</strong> Professional photography, e-commerce functionality, custom web application features. We'll tell you clearly what's in and out before we start.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem;">
+        <Guarantee />
+      </div>
+
+      <p style="font-size:.9375rem; color:var(--text-muted); margin-top:1.5rem;">
+        Need ongoing SEO and Google management on top? Our monthly plans combine the website build and ongoing SEO for a predictable monthly fee.
+        <a href="/pricing" style="color:var(--navy); font-weight:600;">See pricing →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--grey">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Common questions</span>
+        <h2>Things people usually ask us.</h2>
+      </div>
+
+      <div class="faq">
+        {[
+          { q: 'How long does a website build take?', a: 'Most sites take 2–4 weeks from when we receive your content. The biggest factor is how quickly we can get your input. We\'ll agree a clear timeline before we start, and stick to it.' },
+          { q: 'Do I need to write the words myself?', a: 'No. We write the copy as part of the build. We\'ll ask you a few questions about your business, your customers, and what makes you different. The final copy will sound like you, not like it was written by a robot or a marketing agency.' },
+          { q: 'What if I already have a website?', a: 'That\'s fine. We can either rebuild it completely or work alongside it. We\'ll tell you honestly in the free audit whether a full rebuild is necessary or whether targeted fixes would do the job.' },
+          { q: 'Who owns the website?', a: 'You do, completely. We hand over all logins and files when the project is done. There\'s no annual licence fee to "keep your site running". The code is yours.' },
+          { q: 'Will it work on mobile?', a: 'Yes, it\'s the first thing we design for. Over 60% of local searches happen on a phone. A site that works on desktop but not mobile is working for barely half your visitors.' },
+          { q: 'What\'s the 60-day guarantee?', a: 'If you\'re not happy with the work in the first 60 days, we\'ll refund everything. No questions, no awkward conversations. We\'re confident in what we build, this is how we show it.' },
+        ].map(({ q, a }) => (
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              {q}
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq__answer">
+              <p>{a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <AuditCTA />
+
+</Layout>

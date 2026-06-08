@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | Hallmark Studio"
+  description="The page you're looking for doesn't exist. Find your way back to Hallmark Studio, web design and SEO for Essex small businesses."
+  noindex={true}
+>
+
+  <section style="background:var(--navy); min-height:100svh; display:flex; align-items:center; padding-top:var(--nav-h); padding-bottom:4rem;">
+    <div class="container" style="text-align:center;">
+      <div style="font-family:var(--font-serif); font-size:clamp(5rem,15vw,9rem); font-weight:700; color:rgba(255,255,255,.07); line-height:1; margin-bottom:-1.5rem;">
+        404
+      </div>
+      <span class="label" style="display:block; margin-bottom:1rem;">Page not found</span>
+      <h1 style="color:var(--white); margin-bottom:1.25rem;">
+        That page doesn't exist.
+      </h1>
+      <p style="color:rgba(255,255,255,.65); font-size:1.0625rem; max-width:60ch; margin-inline:auto; margin-bottom:2.5rem;">
+        It may have moved, or the link might be wrong. Let's get you somewhere useful.
+      </p>
+      <div class="hero__actions" style="justify-content:center; flex-wrap:wrap;">
+        <a href="/" class="btn btn--amber btn--lg">Back to homepage</a>
+        <a href="/free-audit" class="btn btn--outline-white">Get a free audit</a>
+        <a href="/contact" class="btn btn--outline-white">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,401 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Guarantee from '../components/Guarantee.astro';
+
+const schemaHomepage = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Hallmark Studio | Web Design & SEO for Essex Small Businesses',
+  description: 'Custom websites and local SEO for Essex small businesses. Based in Chelmsford. Free audit. 60-day guarantee.',
+  url: 'https://www.hallmarkstudio.com/',
+});
+---
+
+<Layout
+  title="Hallmark Studio | Web Design & SEO for Essex Small Businesses"
+  description="Custom websites and local SEO for Essex small businesses. We build sites that load fast, rank on Google, and turn visitors into enquiries. Based in Chelmsford, Essex."
+  schemaExtra={schemaHomepage}
+>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero">
+    <div class="container">
+      <div style="max-width: 740px; position: relative; z-index: 1;">
+        <span class="hero__eyebrow">Web Design &amp; SEO, Chelmsford, Essex</span>
+        <h1>Your website should be winning you customers.<br />Is it?</h1>
+        <div class="hero__rule" aria-hidden="true"></div>
+        <p class="hero__sub">
+          We help Essex tradespeople, salons, and independent professionals show up on Google and win more local customers. Website design and local SEO, handled directly by us. No account managers, no jargon.
+        </p>
+        <div class="hero__actions">
+          <a href="/free-audit" class="btn btn--amber btn--lg">Get a free website audit</a>
+          <a href="/work" class="btn btn--outline-white btn--lg">See our work</a>
+        </div>
+        <p class="hero__no-risk">No obligation. Takes 15 minutes. We'll tell you exactly what we'd fix.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== PROBLEM STATS ======================== -->
+  <section class="section section--grey">
+    <div class="container">
+      <div class="section-header">
+        <h2>Most local business websites are quietly costing them customers.</h2>
+        <p class="section-header__sub">
+          These aren't edge cases. They're the standard for small business websites in Essex right now.
+        </p>
+      </div>
+
+      <div class="editorial-stats">
+        <div class="editorial-stat">
+          <span class="editorial-stat__num">3 sec</span>
+          <p>If your site takes more than 3 seconds to load, over half your visitors leave before they see a single word. Google's own data.</p>
+        </div>
+        <div class="editorial-stat">
+          <span class="editorial-stat__num">97%</span>
+          <p>Of people searching for a local business look online first. If you're not there, you don't exist to them.</p>
+        </div>
+        <div class="editorial-stat">
+          <span class="editorial-stat__num">Top 3</span>
+          <p>The top 3 Google results get 75% of all clicks. Page two is essentially invisible. Local SEO puts you in the frame.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== SERVICES ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">What we do</span>
+        <h2>Two things, done properly.</h2>
+        <p class="section-header__sub">
+          We don't try to do everything. We work with Essex trades, salons, and professional practices on the two things that directly determine whether local customers find them or find a competitor.
+        </p>
+      </div>
+
+      <div class="grid-2">
+
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <span class="service-card__price">From £599</span>
+          <h3>Website Design &amp; Build</h3>
+          <p>
+            A professional website that loads in under 2 seconds, looks right on every phone, and tells Google exactly what you do and where you do it. Not a template. Not Wix. Yours to own. Starts at £599 for a single-page site. Multi-page sites quoted individually.
+          </p>
+          <ul style="display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.5rem;">
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Custom design, no templates
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Mobile-first &amp; fast loading
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> On-page SEO included
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Ongoing support available
+            </li>
+          </ul>
+          <a href="/web-design" class="btn btn--outline" style="margin-top:auto;">Learn more</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <span class="service-card__price">From £199/mo</span>
+          <h3>Local SEO</h3>
+          <p>
+            Show up on Google when Essex customers search for what you do. We handle your Google Business Profile, local citations, on-page optimisation, and monthly reporting. No jargon.
+          </p>
+          <ul style="display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.5rem;">
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Google Business Profile management
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Local keyword targeting
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> Monthly ranking reports
+            </li>
+            <li style="font-size:.9rem; color:var(--text-muted); display:flex; gap:.5rem;">
+              <span style="color:var(--success); font-weight:700; flex-shrink:0;">✓</span> 6-month minimum, rolling monthly after
+            </li>
+          </ul>
+          <a href="/seo" class="btn btn--outline" style="margin-top:auto;">Learn more</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== GUARANTEE ======================== -->
+  <section class="section section--parchment">
+    <div class="container container--narrow">
+      <Guarantee />
+    </div>
+  </section>
+
+  <!-- ======================== WHAT WE'D FIX ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What we typically find on a local business website.</h2>
+        <p class="section-header__sub">
+          These are real patterns. We see them on almost every site we audit.
+        </p>
+      </div>
+
+      <div class="demo__grid">
+
+        <div class="demo__panel demo__panel--before">
+          <div class="demo__panel-header">Before working with us</div>
+          <div class="demo__panel-body">
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✗</div>
+              <div class="demo__issue-text">
+                Site takes 8+ seconds to load on mobile
+                <div class="demo__issue-label">Most visitors bounce before seeing anything</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✗</div>
+              <div class="demo__issue-text">
+                Not appearing on Google Maps or local search
+                <div class="demo__issue-label">Customers can't find you even when searching by name</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✗</div>
+              <div class="demo__issue-text">
+                No clear call to action above the fold
+                <div class="demo__issue-label">Visitors don't know what to do next</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✗</div>
+              <div class="demo__issue-text">
+                Broken on iPhone or Android screens
+                <div class="demo__issue-label">Over 60% of your visitors are on mobile</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✗</div>
+              <div class="demo__issue-text">
+                No title tags or meta descriptions
+                <div class="demo__issue-label">Google doesn't know what your pages are about</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo__panel demo__panel--after">
+          <div class="demo__panel-header">After Hallmark Studio</div>
+          <div class="demo__panel-body">
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✓</div>
+              <div class="demo__issue-text">
+                Sub-2 second load time on mobile
+                <div class="demo__issue-label">Optimised images, clean code, fast hosting</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✓</div>
+              <div class="demo__issue-text">
+                Ranking in Google Maps for your key services
+                <div class="demo__issue-label">Customers find you when they're ready to buy</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✓</div>
+              <div class="demo__issue-text">
+                Clear phone number and enquiry form above the fold
+                <div class="demo__issue-label">Every visitor knows exactly how to reach you</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✓</div>
+              <div class="demo__issue-text">
+                Pixel-perfect on every screen size
+                <div class="demo__issue-label">Mobile, tablet, desktop all look and work properly</div>
+              </div>
+            </div>
+            <div class="demo__issue">
+              <div class="demo__issue-icon">✓</div>
+              <div class="demo__issue-text">
+                Full on-page SEO from day one
+                <div class="demo__issue-label">Every page tells Google exactly what you offer and where</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== HOW IT WORKS ======================== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">How it works</span>
+        <h2>Simple from start to finish.</h2>
+        <p class="section-header__sub" style="color:rgba(255,255,255,.55);">
+          Five steps. No surprises. You always know where you stand.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="process-step__num">01</span>
+          <h4>Free audit</h4>
+          <p>We look at your current site and Google presence. 15 minutes, no charge. You get honest feedback either way.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">02</span>
+          <h4>Proposal</h4>
+          <p>We send a clear brief with scope, price, and timeline. No hidden costs. No vague estimates.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">03</span>
+          <h4>Design &amp; build</h4>
+          <p>You review designs before we write a line of code. We build in rounds with your feedback built in.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">04</span>
+          <h4>Launch</h4>
+          <p>We handle the technical side. Hosting, DNS, analytics, Google Search Console. You don't need to touch any of it.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-step__num">05</span>
+          <h4>Ongoing</h4>
+          <p>Monthly SEO, updates, and support if you want them. Or a clean handover if you don't. Your choice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOUNDERS ======================== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:2rem;">
+        <h2>The people behind the work.</h2>
+        <p class="section-header__sub">
+          You'll deal with us directly. Not an account manager. Not a junior. Cormac and Mohamod, from start to finish.
+        </p>
+      </div>
+
+      <div class="founders-editorial">
+
+        <div class="founder-editorial">
+          <div class="founder-editorial__photo">
+            <img src="/ourpictures/Screenshot 2026-06-08 130311.png" alt="Cormac, co-founder of Hallmark Studio" width="400" height="533" loading="lazy" />
+          </div>
+          <div class="founder-editorial__bio">
+            <h4>Cormac</h4>
+            <span class="founder-editorial__role">Co-founder, Web Design &amp; SEO Strategy</span>
+            <p>
+              Cormac's background is in Accounting and Finance, which shapes how he approaches every project. Your online presence is a business problem with a measurable return, not a design exercise. He got tired of watching good Essex businesses lose customers to worse competitors with better websites. Hallmark Studio exists to fix that.
+            </p>
+          </div>
+        </div>
+
+        <div class="founder-editorial">
+          <div class="founder-editorial__photo">
+            <img src="/ourpictures/Screenshot 2026-06-08 130322.png" alt="Mohamod, co-founder of Hallmark Studio" width="400" height="533" loading="lazy" />
+          </div>
+          <div class="founder-editorial__bio">
+            <h4>Mohamod</h4>
+            <span class="founder-editorial__role">Co-founder, Client Relations</span>
+            <p>
+              Mohamod is the first person you'll hear from and the one you'll deal with throughout the project. He manages every client relationship directly, no handoffs, no middlemen. If you have a question, a concern, or a change of mind at any point, Mohamod is your contact. That's not a promise most agencies can make.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== CONTACT FORM ======================== -->
+  <section class="section section--grey" id="contact">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="label">Get in touch</span>
+        <h2>Ready to talk? Let's start with your free audit.</h2>
+        <p class="section-header__sub">
+          Prefer to call or message? We're real people. Reach us however suits you.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2.5rem;">
+        <a href="tel:07570947291" class="btn btn--navy" style="flex:1; min-width:160px; text-align:center;">
+          Call 07570 947291
+        </a>
+        <a href="https://wa.me/447570947291" target="_blank" rel="noopener noreferrer" class="btn btn--outline" style="flex:1; min-width:160px; text-align:center;">
+          WhatsApp us
+        </a>
+      </div>
+
+      <p style="text-align:center; font-size:.875rem; color:var(--text-muted); margin-bottom:2rem; letter-spacing:.04em; text-transform:uppercase;">or leave a message below</p>
+
+      <form
+        class="form js-audit-form"
+        action="https://formspree.io/f/mgobkwjb"
+        method="POST"
+      >
+        <div class="form__field">
+          <label for="home-name">Your name</label>
+          <input type="text" id="home-name" name="name" placeholder="e.g. Sarah Jones" required />
+          <span class="form__error" aria-live="polite"></span>
+        </div>
+        <div class="form__field">
+          <label for="home-email">Email address</label>
+          <input type="email" id="home-email" name="email" placeholder="you@yourbusiness.co.uk" required />
+          <span class="form__error" aria-live="polite"></span>
+        </div>
+        <div class="form__field">
+          <label for="home-business">Business name</label>
+          <input type="text" id="home-business" name="business" placeholder="Your business name" required />
+          <span class="form__error" aria-live="polite"></span>
+        </div>
+        <div class="form__field">
+          <label for="home-website">Website (if you have one)</label>
+          <input type="url" id="home-website" name="website" placeholder="https://yourbusiness.co.uk" />
+          <span class="form__error" aria-live="polite"></span>
+        </div>
+        <div class="form__field">
+          <label for="home-message">What are you looking for help with?</label>
+          <textarea id="home-message" name="message" rows="4" placeholder="e.g. new website, local SEO, both. A little context helps us prepare."></textarea>
+          <span class="form__error" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn btn--amber btn--full">Send message</button>
+      </form>
+
+      <div class="form__success" aria-live="polite">
+        Message sent. We'll be back in touch within one working day.
+      </div>
+
+      <p style="text-align:center; margin-top:2rem; font-size:.9375rem; color:var(--text-muted);">
+        Prefer to book straight in?
+        <a
+          href="https://calendly.com/hallmarkstudio/free-audit"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color:var(--amber); font-weight:600;"
+        >Schedule a 15-minute call on Calendly</a>
+      </p>
+    </div>
+  </section>
+
+</Layout>

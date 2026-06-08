@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+---
+
+<Layout
+  title="Blog | Web Design & SEO Advice for Essex Businesses | Hallmark Studio"
+  description="Plain-English advice on web design, SEO, and Google for Essex small businesses. No jargon. Written by Hallmark Studio, based in Chelmsford."
+>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="label">Blog</span>
+      <h1>Advice for Essex small businesses.</h1>
+      <p class="page-header__sub">
+        Plain English. No jargon. Practical things you can use.
+      </p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-grid">
+        {posts.map(post => {
+          const date = post.data.pubDate.toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'long', year: 'numeric'
+          });
+          return (
+            <article class="blog-card">
+              <div class="blog-card__body">
+                <p class="blog-card__date">{date}</p>
+                <h3>
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </h3>
+                <p>{post.data.description}</p>
+                <a href={`/blog/${post.slug}`} class="blog-card__read">
+                  Read more →
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--grey">
+    <div class="container container--narrow" style="text-align:center;">
+      <span class="label">Free audit</span>
+      <h2>Want to know what YOUR site needs?</h2>
+      <p style="color:var(--text-muted); font-size:1.0625rem; margin-top:.875rem; margin-inline:auto;">
+        Reading about it only goes so far. Get a free 15-minute audit of your actual website and Google listing.
+      </p>
+      <a href="/free-audit" class="btn btn--amber btn--lg" style="margin-top:1.75rem;">
+        Get my free audit
+      </a>
+    </div>
+  </section>
+
+</Layout>

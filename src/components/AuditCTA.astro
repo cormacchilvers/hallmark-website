@@ -1,0 +1,39 @@
+---
+interface Props {
+  heading?: string;
+  sub?: string;
+  dark?: boolean;
+}
+
+const {
+  heading = 'Get a free 15-minute audit.',
+  sub = 'We\'ll look at your website and Google listing and tell you exactly what\'s losing you customers, and what we\'d fix first. No pitch. Just honest feedback.',
+  dark = true,
+} = Astro.props;
+---
+
+<section class={`section ${dark ? 'section--dark' : ''}`}>
+  <div class="container container--narrow">
+    <div class="text-center">
+      <span class="label">Free audit, no obligation</span>
+      <h2>{heading}</h2>
+      <p class="audit-cta__sub mt-md">{sub}</p>
+      <div class="hero__actions" style="justify-content:center; margin-top:2rem;">
+        <a href="/free-audit" class="btn btn--amber btn--lg">
+          Get My Free Audit
+        </a>
+        <a
+          href="https://calendly.com/d/cx5p-3yv-z9y/free-discovery-call"
+          class="btn btn--outline-white"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Or book a call
+        </a>
+      </div>
+      <p class="audit-cta__no-risk mt-sm">
+        Free. 15 minutes. No obligation to use us afterwards.
+      </p>
+    </div>
+  </div>
+</section>

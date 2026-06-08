@@ -1,0 +1,41 @@
+# Hallmark Studio
+
+> Web design and SEO agency for Essex small businesses, based in Chelmsford.
+
+Hallmark Studio builds custom websites and manages local SEO for small businesses across Essex. Founded by Cormac and Mohamod. Every project is handled directly by the founders — no account managers, no handoffs.
+
+## Services
+
+- **Web Design** — Custom, mobile-first websites from £999 one-off. No templates. Built to rank on Google.
+- **SEO & Google** — Local SEO management and Google Business Profile optimisation from £199/month.
+- **Free Audit** — Free 15-minute audit of your website and Google listing. No obligation.
+
+## Pricing
+
+- Starter: £199/month — Google Business Profile management
+- Growth: £399/month — Website build included + monthly SEO
+- Pro: £799/month — Full local SEO campaign
+- Website Only: £999 one-off — Custom website, no ongoing plan
+
+## About
+
+- Based in Chelmsford, Essex, UK
+- Serving businesses across Chelmsford, Colchester, Southend-on-Sea, Brentwood, Basildon, and wider Essex
+- 60-day walk-away guarantee on all plans
+
+## Contact
+
+- Email: hello@hallmarkstudio.com
+- Phone: 07570 947291
+- Website: https://hallmarkstudio.com
+
+## Pages
+
+- /: Homepage
+- /web-design: Web design service details
+- /seo: SEO and Google management service details
+- /pricing: Full pricing for all plans
+- /about: About the founders, Cormac and Mohamod
+- /blog: Web design and SEO advice for Essex small businesses
+- /contact: Contact page
+- /free-audit: Request a free website and Google listing audit

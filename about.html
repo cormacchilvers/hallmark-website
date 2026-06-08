@@ -1,14 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Web Design &amp; SEO Agency Chelmsford | Hallmark Studio</title>
   <meta name="description" content="Hallmark Studio is a Chelmsford, Essex-based web design and SEO agency built to help businesses grow online. Learn about who we are and how we work." />
+  <link rel="canonical" href="https://hallmarkstudio.com/about" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YDTCT024ER"></script>
   <script>
@@ -17,7 +18,18 @@
     gtag('js', new Date());
 
     gtag('config', 'G-YDTCT024ER');
-  </script></head>
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hallmarkstudio.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://hallmarkstudio.com/about" }
+    ]
+  }
+  </script>
+</head>
 <body>
 
   <a href="#main" class="skip-link">Skip to content</a>
@@ -57,12 +69,11 @@
   <section class="about-hero">
     <div class="container">
       <div class="about-hero__inner">
-        <p class="about-hero__eyebrow">Established 2026</p>
+        <p class="about-hero__eyebrow">A new studio, built around everything established agencies get wrong — Est. 2026</p>
         <h1 class="about-hero__anchor">
           We believe in the power<br>
           of a <em>first impression.</em>
         </h1>
-        <div class="about-hero__divider"></div>
         <p class="about-hero__body">
           We are <strong>Hallmark Studio</strong> — a web design and SEO studio built for businesses that refuse to blend in. We combine editorial precision with modern technology to build websites that don't just look exceptional, they rank on Google and convert visitors into customers. No templates. No outsourcing. No compromise. Just work that makes an impression and results that matter.
         </p>
@@ -79,7 +90,7 @@
         </div>
         <div>
           <p class="about-team__label">Who we are</p>
-          <p class="about-team__bio-text">
+          <p class="about-team__bio-lead">
             Hallmark Studio was built by two people in Chelmsford, Essex, who believed small businesses deserved better than templates and broken promises.
           </p>
           <p class="about-team__bio-text">
@@ -102,8 +113,9 @@
   <footer class="footer">
     <div class="footer__inner container">
       <p class="footer__copyright">© 2026 Hallmark Studio. All rights reserved.</p>
+      <a href="tel:07570947291" class="footer__phone">07570 947291</a>
       <div class="footer__links">
-<a href="https://www.linkedin.com/company/hallmarkstudio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/hallmarkstudio" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.instagram.com/hallmarkstudio.web" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.x.com/byhallmark" target="_blank" rel="noopener noreferrer">X</a>
         <a href="https://www.tiktok.com/@hallmark.studio" target="_blank" rel="noopener noreferrer">TikTok</a>
@@ -116,5 +128,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-
-

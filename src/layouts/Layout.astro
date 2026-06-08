@@ -1,0 +1,203 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schemaExtra?: string; // raw JSON-LD string for page-specific schema
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/hero-bg.jpg',
+  noindex = false,
+  schemaExtra,
+} = Astro.props;
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MarketingAgency',
+  name: 'Hallmark Studio',
+  description: 'Web design and SEO agency based in Chelmsford, Essex. We build custom websites that get Essex small businesses found on Google.',
+  url: 'https://www.hallmarkstudio.com',
+  telephone: '+447570947291',
+  email: 'hello@hallmarkstudio.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Chelmsford',
+    addressRegion: 'Essex',
+    addressCountry: 'GB',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Chelmsford' },
+    { '@type': 'City', name: 'Colchester' },
+    { '@type': 'City', name: 'Southend-on-Sea' },
+    { '@type': 'City', name: 'Brentwood' },
+    { '@type': 'AdministrativeArea', name: 'Essex' },
+  ],
+  foundingDate: '2026',
+  sameAs: [
+    'https://www.linkedin.com/company/hallmarkstudio',
+    'https://www.instagram.com/hallmarkstudio.web',
+    'https://www.x.com/byhallmark',
+    'https://www.tiktok.com/@hallmark.studio',
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+  <meta property="og:title"        content={title} />
+  <meta property="og:description"  content={description} />
+  <meta property="og:url"          content={canonicalURL} />
+  <meta property="og:image"        content={new URL(ogImage, Astro.site).href} />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type"         content="website" />
+  <meta property="og:locale"       content="en_GB" />
+  <meta property="og:site_name"    content="Hallmark Studio" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@byhallmark" />
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- LocalBusiness schema (sitewide) -->
+  <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+
+  <!-- Page-specific schema slot -->
+  {schemaExtra && <script type="application/ld+json" set:html={schemaExtra} />}
+
+  <!-- Google Analytics (respects cookie consent) -->
+  <script is:inline>
+    if (localStorage.getItem('hs-cookie-consent') === 'declined') {
+      window['ga-disable-G-YDTCT024ER'] = true;
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YDTCT024ER"></script>
+  <script>
+    (window as any).dataLayer = (window as any).dataLayer || [];
+    function gtag(...args: any[]) { (window as any).dataLayer.push(args); }
+    gtag('js', new Date());
+    gtag('config', 'G-YDTCT024ER');
+  </script>
+
+  <slot name="head" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <Nav />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer />
+  <CookieConsent />
+
+  <!-- FAQ accordion (runs on pages that include .faq) -->
+  <script>
+    document.querySelectorAll<HTMLButtonElement>('.faq__question').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const item = btn.closest('.faq__item')!;
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('is-open');
+        document.querySelectorAll('.faq__item.is-open').forEach(el => {
+          el.classList.remove('is-open');
+          el.querySelector<HTMLButtonElement>('.faq__question')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+  <!-- Form validation -->
+  <script>
+    function validateField(field: HTMLInputElement | HTMLTextAreaElement) {
+      const wrap = field.closest<HTMLElement>('.form__field')!;
+      const errEl = wrap.querySelector<HTMLElement>('.form__error');
+      let ok = true, msg = '';
+
+      if (field.required && !field.value.trim()) {
+        ok = false; msg = 'This field is required.';
+      } else if (field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        ok = false; msg = 'Please enter a valid email address.';
+      }
+
+      wrap.classList.toggle('has-error', !ok);
+      field.classList.toggle('is-invalid', !ok);
+      if (errEl) errEl.textContent = msg;
+      return ok;
+    }
+
+    document.querySelectorAll<HTMLFormElement>('.js-audit-form').forEach(form => {
+      const fields = [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
+        'input[required], textarea[required]'
+      )];
+      const successEl = form.nextElementSibling as HTMLElement | null;
+
+      fields.forEach(f => {
+        f.addEventListener('blur', () => validateField(f));
+        f.addEventListener('input', () => {
+          if (f.closest('.form__field')?.classList.contains('has-error')) validateField(f);
+        });
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const allOk = fields.map(validateField).every(Boolean);
+        if (!allOk) return;
+
+        const btn = form.querySelector<HTMLButtonElement>('[type="submit"]')!;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' },
+          });
+          if (!res.ok) throw new Error('failed');
+          form.classList.add('is-submitted');
+          successEl?.classList.add('is-visible');
+        } catch {
+          btn.disabled = false;
+          btn.textContent = 'Try again';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
